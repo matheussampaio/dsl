@@ -1,0 +1,18 @@
+- set brightness: 50
+- set contrast: 100
+- set ratio: 100
+- assert ratio: 100
+- assert ratio: 99
+- set ratio: 99
+- assert brightness: 50
+- assert freesync: 0
+- set freesync: 1
+- assert freesync: 1
+- assert freesync: 0
+- print: FreeSync ativado!
+- print: Esperar 1 segundo para o monitor reiniciar...
+- delay: 1000
+- for 0 to 3:
+    - assert freesync: 1
+    - print: FreeSync continua ativado
+    - delay: 1000
